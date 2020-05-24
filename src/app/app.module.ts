@@ -5,15 +5,22 @@ import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors.service';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { TitleCaseComponent } from './title-case/title-case.component';
+
+import { FormsModule } from '@angular/forms';
+import { TitleCasePipe } from './title-case.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthorsComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    TitleCaseComponent,
+    TitleCasePipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     AuthorsService
