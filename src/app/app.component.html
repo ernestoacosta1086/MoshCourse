@@ -2,3 +2,8 @@
 <app-favorite></app-favorite>
 <app-authors></app-authors>
 <app-title-case></app-title-case>
+<br>
+<app-like
+ [likesCount] = "tweet.likesCount"
+ [isActive] = "tweet.isLiked"
+></app-like>
