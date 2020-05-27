@@ -1,9 +1,19 @@
 <h1>This is to show all examples of the course ...</h1>
+
+<h2>1- Favorite</h2>
 <app-favorite></app-favorite>
+
+<h2>2- Authors</h2>
 <app-authors></app-authors>
+
+<h2>3- Title Case</h2>
 <app-title-case></app-title-case>
-<br>
-<app-like
- [likesCount] = "tweet.likesCount"
- [isActive] = "tweet.isLiked"
-></app-like>
+<br />
+
+<h2>4- Like</h2>
+<app-like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked"></app-like>
+
+<h2>5- Zippy</h2>
+<app-zippy title="Shipping details">
+    Shipping details Content
+</app-zippy>
