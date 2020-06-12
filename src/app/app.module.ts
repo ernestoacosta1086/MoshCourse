@@ -7,11 +7,12 @@ import { AuthorsService } from './authors.service';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { TitleCaseComponent } from './title-case/title-case.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitleCasePipe } from './title-case.pipe';
 import { LikeComponent } from './like/like.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { CourseComponent } from './course/course.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,13 @@ import { CourseComponent } from './course/course.component';
     TitleCasePipe,
     LikeComponent,
     ZippyComponent,
-    CourseComponent
+    CourseComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthorsService
