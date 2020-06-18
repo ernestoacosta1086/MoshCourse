@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
@@ -13,6 +13,10 @@ import { LikeComponent } from './like/like.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { CourseComponent } from './course/course.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { FollowersListComponent } from './followers-list/followers-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FollowersService } from './followers.service';
+import { AppErrorHandler } from './common/app-error-handler';
 
 @NgModule({
   declarations: [
@@ -24,15 +28,19 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     LikeComponent,
     ZippyComponent,
     CourseComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    FollowersListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    AuthorsService
+    AuthorsService,
+    FollowersService,
+    { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
 })
