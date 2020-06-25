@@ -15,5 +15,4 @@ export class FollowersListComponent implements OnInit {
     this.service.getAll()
       .subscribe(followers => this.followers = followers);
   }
-
 }

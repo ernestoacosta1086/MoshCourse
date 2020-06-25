@@ -6,13 +6,9 @@ import { AuthorsService } from '../authors.service';
   templateUrl: './authors.component.html',
   styleUrls: ['./authors.component.css']
 })
-export class AuthorsComponent implements OnInit {
+export class AuthorsComponent {
 
-  constructor(private aservice: AuthorsService) { }
+  constructor(private service: AuthorsService) { }
 
-  authors = this.aservice.getAuthors();
-
-  ngOnInit() {
-  }
-
+  authors = this.service.getAuthors();
 }
