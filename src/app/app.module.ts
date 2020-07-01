@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
@@ -17,6 +19,9 @@ import { FollowersListComponent } from './followers-list/followers-list.componen
 import { HttpClientModule } from '@angular/common/http';
 import { FollowersService } from './followers.service';
 import { AppErrorHandler } from './common/app-error-handler';
+import { HomeRoutingComponent } from './home-routing/home-routing.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +34,21 @@ import { AppErrorHandler } from './common/app-error-handler';
     ZippyComponent,
     CourseComponent,
     SignupFormComponent,
-    FollowersListComponent
+    FollowersListComponent,
+    HomeRoutingComponent,
+    NotFoundComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path: '', component: HomeRoutingComponent },
+      {path: 'archive/:year/:month', component: ArchiveComponent },
+      {path: '**', component: NotFoundComponent },
+    ])
   ],
   providers: [
     AuthorsService,
