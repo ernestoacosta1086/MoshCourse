@@ -22,6 +22,8 @@ import { AppErrorHandler } from './common/app-error-handler';
 import { HomeRoutingComponent } from './home-routing/home-routing.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ArchiveComponent } from './archive/archive.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { ArchiveComponent } from './archive/archive.component';
     FollowersListComponent,
     HomeRoutingComponent,
     NotFoundComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    NavbarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -45,8 +49,17 @@ import { ArchiveComponent } from './archive/archive.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: '', component: HomeRoutingComponent },
       {path: 'archive/:year/:month', component: ArchiveComponent },
+      {path: 'signup', component: SignupFormComponent },
+      {path: 'courses', component: CourseComponent },
+      {path: 'zippy', component: ZippyComponent },
+      {path: 'like', component: LikeComponent },
+      {path: 'title', component: TitleCaseComponent },
+      {path: 'authors', component: AuthorsComponent },
+      {path: 'favourite', component: FavoriteComponent },
+      {path: 'followers', component: FollowersListComponent },
+      {path: 'home', component: HomeRoutingComponent },
+      {path: '', component: DashboardComponent },
       {path: '**', component: NotFoundComponent },
     ])
   ],
