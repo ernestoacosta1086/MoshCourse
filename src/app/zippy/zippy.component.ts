@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BasicService } from '../basic.service';
+import { BasicService } from '../services/basic.service';
 
 @Component({
   selector: 'app-zippy',

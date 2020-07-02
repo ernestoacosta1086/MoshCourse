@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
-import { AuthorsService } from './authors.service';
+import { AuthorsService } from './services/authors.service';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { TitleCaseComponent } from './title-case/title-case.component';
 
@@ -17,13 +17,14 @@ import { CourseComponent } from './course/course.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { FollowersListComponent } from './followers-list/followers-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FollowersService } from './followers.service';
+import { FollowersService } from './services/followers.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { HomeRoutingComponent } from './home-routing/home-routing.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BinaryComponent } from './binary/binary.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NotFoundComponent,
     ArchiveComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    BinaryComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
       {path: 'favourite', component: FavoriteComponent },
       {path: 'followers', component: FollowersListComponent },
       {path: 'home', component: HomeRoutingComponent },
+      {path: 'binary', component: BinaryComponent },
       {path: '', component: DashboardComponent },
       {path: '**', component: NotFoundComponent },
     ])

@@ -1,0 +1,8 @@
+<input class="form-control" minlength="1" pattern="[0-1]*" [(ngModel)]="value" #name="ngModel">
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+  <div *ngIf="name.errors?.pattern">Is not a 0 or 1</div>
+</div>
+<div>
+    {{getDecimalValue()}}
+</div>

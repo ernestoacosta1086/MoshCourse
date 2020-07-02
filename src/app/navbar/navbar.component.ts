@@ -7,11 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  tweet = {
-    body: '....',
-    isLiked : true,
-    likesCount : 10
-  };
   constructor() { }
 
   ngOnInit() {
