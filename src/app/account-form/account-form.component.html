@@ -1,0 +1,38 @@
+<h4>Reactive Form example</h4>
+<form [formGroup]="accountForm" (ngSubmit)="signup()">
+  <input type="text" class="form-control" id="email" formControlName="email" />
+  <!-- <div *ngIf="email.touched && email.errors">
+    <div class="alert alert-danger" *ngIf="email.errors.required">
+      The email is required
+    </div>
+  </div>
+  <div *ngIf="email.errors">
+    <div class="alert alert-danger" *ngIf="email.errors.pattern">
+      The email is not valid
+    </div>
+  </div> -->
+  <div class="alert alert-danger" *ngIf="email.errors.duplicateEmail">
+    <div >
+      The email is already in use
+    </div>
+  </div>
+  <input
+    type="text"
+    id="password"
+    class="form-control"
+    formControlName="password"
+  />
+  <div *ngIf="password.touched && password.errors">
+    <div class="alert alert-danger" *ngIf="password.errors.required">
+      The password is required
+    </div>
+  </div>
+  <div *ngIf="password.errors">
+    <div class="alert alert-danger" *ngIf="email.errors.pattern">
+      The password is not valid
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="!accountForm.valid">
+    Sign up
+  </button>
+</form>

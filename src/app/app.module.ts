@@ -25,6 +25,9 @@ import { ArchiveComponent } from './archive/archive.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BinaryComponent } from './binary/binary.component';
+import { CompanyFormComponent } from './company-form/company-form.component';
+import { AccountFormComponent } from './account-form/account-form.component';
+import { JsonplaceholderService } from './services/jsonplaceholder.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,9 @@ import { BinaryComponent } from './binary/binary.component';
     ArchiveComponent,
     NavbarComponent,
     DashboardComponent,
-    BinaryComponent
+    BinaryComponent,
+    CompanyFormComponent,
+    AccountFormComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,8 @@ import { BinaryComponent } from './binary/binary.component';
       {path: 'followers', component: FollowersListComponent },
       {path: 'home', component: HomeRoutingComponent },
       {path: 'binary', component: BinaryComponent },
+      {path: 'company', component: CompanyFormComponent },
+      {path: 'account', component: AccountFormComponent },
       {path: '', component: DashboardComponent },
       {path: '**', component: NotFoundComponent },
     ])
@@ -69,6 +76,7 @@ import { BinaryComponent } from './binary/binary.component';
   providers: [
     AuthorsService,
     FollowersService,
+    JsonplaceholderService,
     { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
